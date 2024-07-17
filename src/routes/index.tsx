@@ -6,6 +6,20 @@ import { NotificationWillDisplayEvent, OneSignal, OSNotification } from 'react-n
 import { Notification } from '../components/Notification';
 import { AppRoutes } from './app.routes';
 
+const linking = {
+  prefixes : ["igniteshoesapp://","com.junior.igniteshoesapp://"],
+  config:{
+    screens:{
+      details:{
+        path:"/details/:productId",
+        parse: {
+          productId:(productId: string) => productId
+        }
+      }
+    }
+  }
+}
+
 export function Routes() {
   const { colors } = useTheme();
   const [notification, setNotification] = useState<OSNotification>()
@@ -30,11 +44,11 @@ export function Routes() {
   },[])
 
   return (
-    <NavigationContainer theme={theme}>
+    <NavigationContainer theme={theme} linking={linking}>
       <AppRoutes />
 
     { notification?.title && (
-      <Notification title={notification.title} 
+      <Notification data={notification} 
       onClose={() => setNotification(undefined)}
       />)}
     </NavigationContainer>
