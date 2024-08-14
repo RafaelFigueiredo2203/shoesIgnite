@@ -5,7 +5,7 @@ Este repositório faz parte do Nível 4 do módulo de **React Native**, onde for
 
 ## Objetivos do Projeto 🎯
 
-Neste módulo, você aprenderá a:
+Neste projeto , é possível :
 
 -   **Enviar Dados em Notificações**: Como incluir informações adicionais em notificações push, permitindo redirecionar o usuário para partes específicas do aplicativo.
 -   **Redirecionamento de Usuário**: Configurar ações que levam o usuário para telas específicas ao interagir com a notificação.
